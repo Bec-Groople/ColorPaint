@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+
+    <com.demo.colorpaint.view.ColorPaintView
+        android:id="@+id/paintView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/recyclerView"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/padPhilImage"
+        android:scaleType="centerInside"
+        android:src="@drawable/sandglass"
+        tools:ignore="ContentDescription" />
+
+
+    <RelativeLayout
+        android:id="@+id/layoutMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_back" />
+
+        <Button
+            android:id="@+id/btnTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btnColorAll"
+            android:background="@color/colorPrimary"
+            android:text="@string/tip"
+            android:textColor="@color/colorBackground"
+            android:visibility="visible" />
+        <Button
+            android:id="@+id/btnColorAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btnReset"
+            android:background="@color/colorPrimary"
+            android:text="@string/color_all"
+            android:layout_marginLeft="6dp"
+            android:textColor="@color/colorBackground"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="6dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/reset"
+            android:textColor="@color/colorBackground" />
+        <Button
+            android:layout_marginTop="4dp"
+            android:id="@+id/btnColorAuto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnReset"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="6dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/color_auto"
+            android:textColor="@color/colorBackground" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:scrollbars="none" />
+</RelativeLayout>

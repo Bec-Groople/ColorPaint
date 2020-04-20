@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="menutests.samps.apps.easysoft.ml.menutests.MainActivity">
+
+
+    <item
+        android:id="@+id/action_share"
+        android:icon="@drawable/ic_share_black_24dp"
+        android:orderInCategory="90"
+        android:title="@string/share"
+        app:showAsAction="always" />
+
+</menu>

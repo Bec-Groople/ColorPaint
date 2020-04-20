@@ -1,0 +1,2 @@
+include ':app', ':svglib', ':photolib'
+rootProject.name='ColorPaint'

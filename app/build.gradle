@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.demo.colorpaint"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    signingConfigs {
+        debug {
+            storeFile file('./keystore.jks')
+            storePassword 'poicatch123456'
+            keyAlias = 'poicatch'
+            keyPassword 'poicatch123456'
+        }
+        release {
+            storeFile file('./keystore.jks')
+            storePassword 'poicatch123456'
+            keyAlias = 'poicatch'
+            keyPassword 'poicatch123456'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    implementation 'org.jetbrains:annotations-java5:15.0'
+
+    implementation project(':svglib')
+    implementation project(':photolib')
+    //数据库查看插件
+    debugImplementation 'com.github.whataa:pandora:2.0.4'
+    releaseImplementation 'com.github.whataa:pandora-no-op:2.0.3'
+
+    //数据库
+    implementation "androidx.room:room-runtime:2.2.3"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+}
